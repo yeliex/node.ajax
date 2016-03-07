@@ -1,0 +1,30 @@
+{
+  "name": "node.ajax",
+  "version": "1.0.0",
+  "description": "ajax for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yeliex/node.ajax.git"
+  },
+  "keywords": [
+    "node",
+    "ajax"
+  ],
+  "author": {
+    "name": "yeliex",
+    "email": "yeliex@yeliex.com",
+    "url": "http://yeliex.wang"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yeliex/node.ajax/issues"
+  },
+  "homepage": "https://github.com/yeliex/node.ajax#readme",
+  "dependencies": {
+    "extend": "^3.0.0"
+  }
+}
