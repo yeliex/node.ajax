@@ -1,6 +1,6 @@
 {
   "name": "node.ajax",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ajax for node",
   "main": "index.js",
   "scripts": {
