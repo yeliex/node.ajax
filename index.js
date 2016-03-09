@@ -62,7 +62,7 @@ var queryString = require("querystring");
                 throw e;
             }
         }).then(function (res) {
-            res.status = (res.status == "success" || res.status == "SUCCESS" || res.status == 200 || res.status == true || res.code == 200);
+            res.status = (res.status == "success" || res.status == "SUCCESS" || res.status == 200 || res.status == true || res.code == 200 || res.resultCode == 200);
             return res;
         });
     };
