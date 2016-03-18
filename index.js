@@ -91,7 +91,7 @@ var queryString = require("querystring");
             catch (e) {
               res.error = e;
             }
-          }());
+          }(response));
         }
       });
       return res;
