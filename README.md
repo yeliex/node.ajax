@@ -9,14 +9,34 @@ ajax for node
 $ npm install node.ajax
 ```
 
-## Usage
+## Use with node
 ```js
 var ajax = require("node.ajax");
-var result = yield ajax("http://domain:port","GET",{
+
+var res = yield ajax("http://domain:port","GET",{
     params: value
 })
 ````
-jQuery like:
+
+## Use with window
+
+```js
+var ajax = require("node.ajax");
+
+// async (need a callback,return true)
+var res = ajax("http://domain:port","GET",{
+    params: value
+},function(res){
+    // do something ....
+});
+
+// sync (return response data)
+var res = ajax("http://domain:port","GET",{
+    params: value
+});
+````
+
+## jQuery like:
 ```js
 var $ = {
     ajax: require("node.ajax")
