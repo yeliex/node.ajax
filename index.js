@@ -90,6 +90,7 @@ var queryString = require("querystring");
                         }
                         catch (e) {
                             res.error = e;
+                            res.data = response;
                         }
                     }(response));
                 }
