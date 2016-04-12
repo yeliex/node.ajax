@@ -58,7 +58,11 @@ var queryString = require("querystring");
                     return JSON.parse(res);
                 }
                 catch (e) {
-                    throw e;
+                    return {
+                        status: false,
+                        error: "Parse Error",
+                        syntax: e
+                    }
                 }
             }).then(function (res) {
                 res.status = status(res.status || res.code || res.result);
