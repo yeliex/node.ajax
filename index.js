@@ -61,7 +61,8 @@ var queryString = require("querystring");
                     return {
                         status: false,
                         error: "Parse Error",
-                        syntax: e
+                        syntax: e,
+                        data: res
                     }
                 }
             }).then(function (res) {
