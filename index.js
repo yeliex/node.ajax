@@ -7,7 +7,7 @@ var env = ((typeof window == "undefined") ? ("node") : ("window")); // 简单判
 var queryString = require("querystring");
 (function () {
     var ajax = {
-        node: function (url, method, data) {
+        node: function (url, method, data, headers) {
             // 拼接get query
             url = (method === "GET" && data) ? (function () {
                 var _url = Url.parse(url);
@@ -15,7 +15,8 @@ var queryString = require("querystring");
                     host: _url.host,
                     protocol: _url.protocol,
                     pathname: _url.path,
-                    query: data
+                    query: data,
+                    headers
                 });
             }()) : (url);
             url = Url.parse(url);

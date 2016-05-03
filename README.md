@@ -15,7 +15,7 @@ var ajax = require("node.ajax");
 
 var res = yield ajax("http://domain:port","GET",{
     params: value
-})
+},{'Content-Type': 'application/x-www-form-urlencoded'})
 ````
 
 ## Use with window
