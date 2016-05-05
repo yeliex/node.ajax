@@ -7,7 +7,8 @@ var env = ((typeof window == "undefined") ? ("node") : ("window")); // 简单判
 var queryString = require("querystring");
 (function () {
     var ajax = {
-        node: function (url, method, data, headers) {
+        node: function (url, method, data, headers, code) {
+            code = code || "utf-8";
             // 拼接get query
             url = (method === "GET" && data) ? (function () {
                 var _url = Url.parse(url);
@@ -37,8 +38,7 @@ var queryString = require("querystring");
                         'Content-Length': data.length
                     }, headers) : (headers))
                 }, function (res) {
-                    res.setEncoding('utf8');
-
+                    res.setEncoding(code);
                     var data = "";
                     res.on('data', function (chunk) {
                         data += chunk;
