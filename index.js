@@ -15,8 +15,7 @@ var queryString = require("querystring");
                     host: _url.host,
                     protocol: _url.protocol,
                     pathname: _url.path,
-                    query: data,
-                    headers
+                    query: data
                 });
             }()) : (url);
             url = Url.parse(url);
@@ -33,10 +32,10 @@ var queryString = require("querystring");
                     port: url.port,
                     path: url.path,
                     method: (method === "GET" || method === "POST") ? (method) : ("GET"),
-                    headers: ((method === "POST") ? ({
+                    headers: ((method === "POST") ? Object.assign({}, {
                         'Content-Type': 'application/x-www-form-urlencoded',
                         'Content-Length': data.length
-                    }) : (""))
+                    }, headers) : (headers))
                 }, function (res) {
                     res.setEncoding('utf8');
 
