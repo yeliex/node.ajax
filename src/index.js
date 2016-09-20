@@ -3,6 +3,7 @@ const env = ((typeof window == "undefined") ? ("node") : ("window")); // 简单�
   const ajax = {
     node: function (url, method, data, headers, code) {
       const Url = require("url");
+      const qs = require('qs');
       code = code || "utf-8";
       // 拼接get query
       url = (method === "GET" && data) ? (function () {
@@ -16,7 +17,7 @@ const env = ((typeof window == "undefined") ? ("node") : ("window")); // 简单�
       }()) : (url);
       url = Url.parse(url);
       if (method == "POST") {
-        data = JSON.stringify(data);
+        data = qs.stringify(data);
       }
       let http = require("http");
       if (url.port == "443" || url.protocol == "https:") {
@@ -50,7 +51,7 @@ const env = ((typeof window == "undefined") ? ("node") : ("window")); // 简单�
       });
       return _ajax.then(function (res) {
         try {
-          return JSON.parse(res);
+          return qs.parse(res);
         }
         catch (e) {
           return {
