@@ -17,7 +17,7 @@ const env = ((typeof window == "undefined") ? ("node") : ("window")); // 简单�
       }()) : (url);
       url = Url.parse(url);
       if (method == "POST") {
-        data = qs.stringify(data);
+        data = typeof data === 'string' ? data : qs.stringify(data);
       }
       let http = require("http");
       if (url.port == "443" || url.protocol == "https:") {
@@ -51,7 +51,7 @@ const env = ((typeof window == "undefined") ? ("node") : ("window")); // 简单�
       });
       return _ajax.then(function (res) {
         try {
-          return qs.parse(res);
+          return JSON.parse(res);
         }
         catch (e) {
           return {
