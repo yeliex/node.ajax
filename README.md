@@ -1,5 +1,7 @@
 # node.ajax
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/yeliex/node.ajax.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/node.ajax.svg?style=flat-square)](https://www.npmjs.com/package/node.ajax)
 
 ajax for node
